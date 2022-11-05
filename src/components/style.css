@@ -1,0 +1,78 @@
+*,*::before, *::after {
+    margin:0;
+    padding: 0;
+}
+
+body {
+    background-color: #f3f3f3;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.title{
+    margin-left: 75%;
+}
+.container {
+    box-sizing: border-box; 
+    width: 8.5in;
+    min-height: 11in;
+    padding: 1in;
+    margin: 1rem;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+.toolbar {
+    background-color: rgb(104, 207, 248) ;
+    color: white;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+}
+.sidebar {
+    position: absolute;
+    
+    color: white;
+    top: 0;
+    left: 0;
+    height: 110px;
+    width: 280px;
+    border-radius: 10px;
+}
+.sidebar li{
+    background-color: rgb(104, 207, 248);
+    list-style: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 300;
+    transform: translateX(-100%);
+    transition: all 0.4s;
+}
+.sidebar li:hover{
+    background-color: whitesmoke;
+    color: rgb(100, 120, 134) ;
+}
+.sidebar--open{
+    transform: translateX(0%);
+}
+.backdrop {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+    display: none;
+}
+.backdrop--open{
+    display: block;
+}
