@@ -35,34 +35,35 @@ body {
     align-items: center;
     padding: 1rem;
 }
-.sidebar {
-    position: absolute;
-    
-    color: white;
-    top: 0;
-    left: 0;
-    height: 110px;
-    width: 280px;
-    border-radius: 10px;
+.mysidenav {
+    background-color: rgb(72, 137, 163) ;
+
 }
-.sidebar li{
-    background-color: rgb(104, 207, 248);
-    list-style: none;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-weight: 300;
-    transform: translateX(-100%);
-    transition: all 0.4s;
+
+@page {
+    margin: 1in;
 }
-.sidebar li:hover{
-    background-color: whitesmoke;
-    color: rgb(100, 120, 134) ;
-}
-.sidebar--open{
-    transform: translateX(0%);
+@media print {
+    body{
+        background: none;
+    }
+    i{
+        display: none;
+    }
+    .container{
+        width: 6.5in;
+        height: 9in;
+        padding: 0;
+        margin: 0;
+        box-shadow: none;
+        align-self: flex-start;
+    }
+    .mysidenav {
+        display: none;
+    }
+    .toolbar {
+        display: none;
+    }
 }
 .backdrop {
     position: fixed;
