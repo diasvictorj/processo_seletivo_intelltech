@@ -1,11 +1,11 @@
 import SideNav, { NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 
-function sideNav() {
+function sideNav({ openBox, backDrop }) {
   return (
     <SideNav
       className="mysidenav"
-      onClick={() => console.log("NavBar")}
+      onClick={() => backDrop()}
       onSelect={(selected) => console.log("Hello" + selected)}
     >
       <SideNav.Toggle />
@@ -21,10 +21,16 @@ function sideNav() {
             <i style={{ fontSize: "1.5em" }} className="fa-solid fa-plus"></i>
           </NavIcon>
           <NavText>Adcionar Item</NavText>
-          <NavItem eventKey="Add-Image">
+          <NavItem
+            onClick={() => openBox({ type: "image", active: true })}
+            eventKey="Add-Image"
+          >
             <NavText>Imagem</NavText>
           </NavItem>
-          <NavItem eventKey="Add-Chart">
+          <NavItem
+            onClick={() => openBox({ type: "chart", active: true })}
+            eventKey="Add-Chart"
+          >
             <NavText>Graficos</NavText>
           </NavItem>
         </NavItem>
