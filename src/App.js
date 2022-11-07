@@ -12,12 +12,15 @@ function App() {
   function openBox(box) {
     setBox({ type: box.type, active: true });
   }
+  function closeBox() {
+    setBox({ type: "", active: false });
+  }
   function showBackDrop() {
     setBackdrop((previousState) => !previousState);
   }
 
   useEffect(() => {
-    console.log("Re-Render", backdrop);
+    console.log("Re-Render", box);
   }, [box, backdrop]);
 
   return (
@@ -25,9 +28,9 @@ function App() {
       <ToolBar />
       <SideNav openBox={openBox} backDrop={showBackDrop} />
       <Backdrop backdrop={backdrop} showBackDrop={showBackDrop} />
+      {box.active ? <Box box={box} closeBox={closeBox} /> : null}
       <div className="content">
         <div className="container">"Bora bill"</div>
-        {box.active ? <Box type={box.type} /> : null}
       </div>
     </>
   );

@@ -5,10 +5,9 @@ function sideNav({ openBox, backDrop }) {
   return (
     <SideNav
       className="mysidenav"
-      onClick={() => backDrop()}
       onSelect={(selected) => console.log("Hello" + selected)}
     >
-      <SideNav.Toggle />
+      <SideNav.Toggle onClick={() => backDrop()} />
       <SideNav.Nav defaultSelected="home">
         <NavItem eventKey="Home">
           <NavIcon>
