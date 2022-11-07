@@ -1,7 +1,12 @@
 import React, { useRef } from "react";
 
-function Box({ box, closeBox }) {
+function Box({ box, closeBox, addElements }) {
   const textInput = useRef();
+
+  const imageElement = (url) => {
+    addElements(<img src={`${url}`} alt="imagem não encontrada" />);
+  };
+
   const boxContent = () => {
     switch (box.type) {
       case "image": {
@@ -11,7 +16,7 @@ function Box({ box, closeBox }) {
             <input ref={textInput} type="text"></input>
             <button
               type="submit"
-              onClick={() => console.log("click", textInput.current.value)}
+              onClick={() => imageElement(textInput.current.value)}
             >
               inserir
             </button>

@@ -6,6 +6,7 @@
 body {
     background-color: #f3f3f3;
     font-family: 'Open Sans', sans-serif;
+    
 }
 
 .title{
@@ -26,8 +27,22 @@ body {
 .content {
     display: flex;
     justify-content: center;
+} 
+
+.content-box {
+    display: flex;
+    margin: 30px 30px;
+    max-block-size: 30px;
+    padding: 1in;
+    box-sizing: border-box; 
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
+    background-color: rgb(238, 231, 231);
+
+
 }
 .toolbar {
+    display: flex;
+    justify-content: center;
     background-color: rgb(104, 207, 248) ;
     color: white;
     display: flex;

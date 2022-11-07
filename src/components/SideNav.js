@@ -1,12 +1,9 @@
 import SideNav, { NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 
-function sideNav({ openBox, backDrop }) {
+function sideNav({ openBox, backDrop, handlePrint }) {
   return (
-    <SideNav
-      className="mysidenav"
-      onSelect={(selected) => console.log("Hello" + selected)}
-    >
+    <SideNav className="mysidenav">
       <SideNav.Toggle onClick={() => backDrop()} />
       <SideNav.Nav defaultSelected="home">
         <NavItem eventKey="Home">
@@ -33,7 +30,7 @@ function sideNav({ openBox, backDrop }) {
             <NavText>Graficos</NavText>
           </NavItem>
         </NavItem>
-        <NavItem eventKey="Print">
+        <NavItem onClick={() => handlePrint()} eventKey="Print">
           <NavIcon>
             <i style={{ fontSize: "1.5em" }} className="fa-solid fa-print"></i>
           </NavIcon>
