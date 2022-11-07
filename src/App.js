@@ -11,10 +11,7 @@ import { createRef } from "react";
 function App() {
   const [box, setBox] = useState({ type: "", active: false });
   const [backdrop, setBackdrop] = useState(false);
-  const [elementsOnPage, setElements] = useState([
-    "Bora Billlllll",
-    "Bora Fi do BIILLLL",
-  ]);
+  const [elementsOnPage, setElements] = useState([]);
 
   function addElementsOnPage(e) {
     setElements((previousState) => [...previousState, e]);

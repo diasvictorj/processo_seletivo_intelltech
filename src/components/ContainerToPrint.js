@@ -3,10 +3,12 @@ import Content from "./Content";
 
 const ContainerToPrint = React.forwardRef(({ props }, ref) => {
   return (
-    <div ref={ref} className="container content">
-      {props.map((e, i) => (
-        <Content key={i} element={e} />
-      ))}
+    <div className="content">
+      <div ref={ref} className="container">
+        {props.map((e, i) => (
+          <Content key={i} element={e} />
+        ))}
+      </div>
     </div>
   );
 });
